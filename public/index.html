@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tablero de Misiones</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Tablero de Retos y Misiones</h1>
+    <p class="subtitle">API Maestro-Detalle con Catálogo y Control de Estado</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Enviar / Actualizar mi progreso</h2>
+      <form id="form-registro">
+        <div class="grid-2">
+          <label>
+            Carnet
+            <input type="text" id="carnet" required maxlength="25" placeholder="1890-23-18949" />
+          </label>
+          <label>
+            Nombre
+            <input type="text" id="nombre" required maxlength="150" placeholder="Nombre completo" />
+          </label>
+        </div>
+        <label>
+          Correo
+          <input type="email" id="correo" required maxlength="150" placeholder="correo@miumg.edu.gt" />
+        </label>
+
+        <h3>Misiones</h3>
+        <div id="lista-misiones" class="misiones-form">Cargando catálogo...</div>
+
+        <button type="submit">Enviar registro</button>
+        <p id="mensaje-form" class="mensaje"></p>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <h2>Avance de estudiantes</h2>
+        <button id="btn-refrescar">Refrescar</button>
+      </div>
+      <div id="tablero" class="tablero">Cargando estudiantes...</div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

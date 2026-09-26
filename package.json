@@ -1,0 +1,23 @@
+{
+  "name": "api-retos-misiones",
+  "version": "1.0.0",
+  "description": "API maestro-detalle para el reto de misiones (Estudiantes / Misiones / EstudianteMisiones)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Maryori Rachael Fajardo Paredes",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "mssql": "^12.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
