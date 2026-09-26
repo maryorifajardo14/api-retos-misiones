@@ -101,9 +101,20 @@ Detalle de un estudiante puntual con el catálogo completo de misiones y su esta
 
 ## Despliegue
 
-- Backend: cualquier hosting Node (Render, Railway, Azure App Service, Fly.io). Configurar
-  las mismas variables de `.env` como variables de entorno del servicio.
-- Frontend: se sirve desde el mismo backend (`public/`), así que no requiere un hosting
-  aparte. Si se prefiere GitHub Pages para el frontend, ajustar `API_BASE` en
-  `public/app.js` a la URL pública del backend.
-- Subir el repositorio a GitHub antes de desplegar.
+Repositorio: https://github.com/maryorifajardo14/api-retos-misiones
+
+El frontend se sirve desde el mismo backend (`public/`), así que un solo servicio
+desplegado cubre API + tablero.
+
+### Render (incluye `render.yaml`, capa gratuita sin tarjeta)
+
+1. Entrar a https://dashboard.render.com con la cuenta de GitHub.
+2. **New +** → **Blueprint** → seleccionar el repo `api-retos-misiones`. Render detecta
+   `render.yaml` automáticamente.
+3. Al desplegar, pedirá llenar las variables marcadas `sync: false`: `DB_USER`,
+   `DB_PASSWORD`, `DB_SERVER`, `DB_DATABASE` (usar las mismas del `.env` local).
+4. Esperar el build (~1-2 min). La URL pública queda como
+   `https://api-retos-misiones.onrender.com` (o similar).
+
+Alternativa: cualquier otro hosting Node (Railway, Azure App Service, Fly.io) funciona
+igual, configurando las mismas variables de entorno y `npm start` como comando de inicio.
